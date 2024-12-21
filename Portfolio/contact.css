@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    background-color: black;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span{
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links{
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #077b32;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: #077b32;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: #077b32;
+}
+section{
+    width: 100%;
+    height: 90vh;
+}
+.contact-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contact-section .container{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+.container h1{
+    font-size: clamp(1.5rem, 1.5rem + 5vw, 1.8rem);
+}
+.container h1 {
+    color: #077b32;
+    text-shadow: 0  0 10px #077b32;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+}
+
+button {
+    background-color: #4caf50; /* Button color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker button color on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        height: 12vh; /* Adjusted height for smaller screens */
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+        padding: 0 10px; /* Reduced padding for smaller screens */
+    }
+
+    .hamburg {
+        display: block; /* Show hamburger menu */
+    }
+
+    .dropdown {
+        top: 12vh; /* Ensure dropdown is positioned correctly */
+    }
+
+    .nav-container .links {
+        display: none; /* Hide links on small screens */
+    }
+
+    .contact-section {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .contact-section .container {
+        width: 90%; /* Full width on smaller screens */
+        padding: 0 10px; /* Added padding */
+    }
+
+    .contact-form form {
+        gap: 10px; /* Ensure consistent gap */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem; /* Smaller logo on very small screens */
+    }
+
+    .nav-container .links a {
+        font-size: 1rem; /* Smaller font size for links */
+    }
+
+    .container h1 {
+        font-size: clamp(1.2rem, 1.2rem + 5vw, 1.6rem); /* Further adjusted font size */
+    }
+
+    .contact-section .container {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9rem; /* Slightly smaller font size for form elements */
+    }
+
+    button {
+        font-size: 0.9rem; /* Smaller font size for button */
+    }
+}

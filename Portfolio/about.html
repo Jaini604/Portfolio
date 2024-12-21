@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="about.css">
+    <title>About - Junaid Ali</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Junaid <span>Ali</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="services.html">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="toggleDropdown()"></i>
+        </div>
+        <div class="dropdown" id="dropdownMenu">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
+            </div>
+        </div>
+    </nav>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h1 data-aos="fade-up" data-aos-duration="1500">About Me</h1>
+            <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                Hello! I'm Junaid Ali, a passionate front-end developer with a knack for creating visually stunning and highly functional web experiences. With expertise in HTML5, CSS3, and JavaScript, as well as modern frameworks like React and Vue.js, I thrive on building responsive and engaging websites. My goal is to combine creativity with technical skill to deliver exceptional digital solutions. When I'm not coding, you'll find me exploring new technologies and learning new design trends.
+            </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.twitter.com" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+      
+      function toggleDropdown() {
+          const dropdown = document.getElementById('dropdownMenu');
+          dropdown.classList.toggle('active');
+      }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

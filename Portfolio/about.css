@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: inline;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span{
+    color: #077b32;
+    text-shadow: 0 0 10px #077b32;
+}
+
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links{
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #077b32;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: #077b32;
+}
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: #077b32;
+}
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.about-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.about-section .container{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+
+.container h1{
+    font-size: clamp(2rem, 2rem + 8vw, 2.8rem);
+}
+.container h1 {
+    color: #077b32;
+    text-shadow: 0  0 10px #077b32;
+}
+.container p{
+    font-size: clamp(0.4rem , 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #077b32;
+    border-radius: 50%;
+    color: #077b32;
+    margin: 5px 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover{
+    scale: 1.3;
+    color: black;
+    background-color: #077b32;
+    filter: drop-shadow(0 0 10px #077b32);
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        height: 12vh; /* Adjusted height for smaller screens */
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .hamburg {
+        display: block; /* Show hamburger menu */
+    }
+
+    .dropdown {
+        top: 10vh; /* Ensure dropdown is positioned correctly */
+    }
+
+    .nav-container .links {
+        display: none; /* Hide links on small screens */
+    }
+
+    .about-section {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .about-section .container {
+        width: 100%; /* Full width on smaller screens */
+        padding: 0 10px; /* Added padding */
+    }
+
+    .container h1 {
+        font-size: clamp(1.5rem, 1.5rem + 8vw, 2.2rem); /* Adjusted font size */
+    }
+
+    .container p {
+        font-size: clamp(0.4rem, 0.2rem + 7vw, 0.9rem); /* Adjusted font size */
+    }
+
+    .social-links i {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem; /* Smaller icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem; /* Smaller logo on very small screens */
+    }
+
+    .nav-container .links a {
+        font-size: 1rem; /* Smaller font size for links */
+    }
+
+    .social-links i {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem; /* Smaller icons */
+    }
+
+    .container h1 {
+        font-size: clamp(1.2rem, 1.2rem + 8vw, 1.8rem); /* Further adjusted font size */
+    }
+
+    .container p {
+        font-size: clamp(0.4rem, 0.2rem + 6vw, 0.8rem); /* Further adjusted font size */
+    }
+}
